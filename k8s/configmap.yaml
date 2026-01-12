@@ -5,3 +5,5 @@ metadata:
 data:
   RabbitMQ__Host: rabbitmq
   RabbitMQ__VirtualHost: /
+  RabbitMQ__Port: "5672"
+  QUEUE_ORDER_PLACED: "order-placed-event"
