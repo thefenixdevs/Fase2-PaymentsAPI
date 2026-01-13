@@ -1,5 +1,5 @@
 ﻿using MassTransit;
-using PaymentsApi.Contracts.Events;
+using Shared.Contracts.Events;
 
 namespace PaymentsApi.Consumers;
 

@@ -10,10 +10,12 @@
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="9.0.0" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PaymentsApi\PaymentsApi.csproj" />
+    <ProjectReference Include="..\..\Fase2-CatalogAPI\src\Shared\Shared.csproj" />
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
 </Project>

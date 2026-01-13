@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
-using PaymentsApi.Contracts.Events;
+using Shared.Contracts.Events;
 
 var services = new ServiceCollection();
 
