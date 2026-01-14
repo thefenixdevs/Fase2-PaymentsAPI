@@ -11,13 +11,20 @@ public class Worker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        while (!stoppingToken.IsCancellationRequested)
+        _logger.LogInformation("PaymentAPI Worker iniciado.");
+
+        try
         {
-            if (_logger.IsEnabled(LogLevel.Information))
-            {
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-            }
-            await Task.Delay(1000, stoppingToken);
+            // Mantém o processo vivo enquanto o host estiver rodando
+            await Task.Delay(Timeout.Infinite, stoppingToken);
+        }
+        catch (TaskCanceledException)
+        {
+            // Shutdown gracioso
+        }
+        finally
+        {
+            _logger.LogInformation("PaymentAPI Worker finalizado.");
         }
     }
 }

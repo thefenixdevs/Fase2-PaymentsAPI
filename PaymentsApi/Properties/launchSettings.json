@@ -5,7 +5,8 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
+        "DOTNET_ENVIRONMENT": "Development",
+        "QUEUE_ORDER_PLACED": "Shared.Contracts.Events:OrderPlacedEvent",
       }
     }
   }
