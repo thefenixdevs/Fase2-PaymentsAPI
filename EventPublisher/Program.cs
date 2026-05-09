@@ -1,18 +1,20 @@
 ﻿using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
-using PaymentsApi.Contracts.Events;
+using Shared.Contracts.Events;
 
 var services = new ServiceCollection();
 
 var rabbitHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "localhost";
+var rabbitUsername = Environment.GetEnvironmentVariable("RABBITMQ_USERNAME") ?? "guest";
+var rabbitPassword = Environment.GetEnvironmentVariable("RABBITMQ_PASSWORD") ?? "guest";
 services.AddMassTransit(x =>
 {
   x.UsingRabbitMq((context, cfg) =>
   {
-    cfg.Host("localhost", "/", h =>
+    cfg.Host(rabbitHost, "/", h =>
     {
-      h.Username("guest");
-      h.Password("guest");
+      h.Username(rabbitUsername);
+      h.Password(rabbitPassword);
     });
   });
 });
